@@ -1,10 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-*{
-box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
-font-family: Roboto, Georgia;
-margin: 0;
-padding: 0;
+body {
+  font-family: Roboto, Georgia;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  flex: 0.5;
+  border-radius: 50px;
+  height: 80vh;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.6s ease-out;
+  background-color: black;
+}
+
+
+
+.panel h3 {
+  opacity: 0;
+  font-size: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  transition: opacity 0.7s ease-in;
+}
+
+
+.panel-active {
+  flex: 5;
+}
+.panel-active h3 {
+  opacity: 1;
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
 }
